@@ -854,7 +854,7 @@ z-index: 10;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .header-bg::-webkit-scrollbar {
