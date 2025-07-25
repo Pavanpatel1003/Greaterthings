@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME PAGE - GRATER THINGS THREADS</title>
+  <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+  <script src="./assets/js/fontawesome.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+<style>
+  .lightbox-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .close-lightbox {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+
+  @keyframes zoom {
+    from {
+      transform: scale(0.7);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .close-lightbox {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .full-container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .banner-set {
+    aspect-ratio: 17 / 10;
+    margin-top: auto;
+  }
+
+  .banner_content h6 {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbarss {
+    background-image: none;
+  }
+
+  .extra-section {
+    position: unset;
+  }
+
+  /* carousal */
+  .slick-next .slick-arrow {
+    background-image: url('assets/images/arrow.svg') !important;
+    background-color: aqua;
+  }
+
+  /* carousal end */
+
+
+  .main-logo,
+  .scroll-handle {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .hidden-top-header {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .main-logo,
+  .scroll-handle {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #000;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+
+  /* Default: hide slider */
+  .onlymobileslider {
+    display: none;
+  }
+
+  /* Show only on mobile */
+  @media (max-width: 767px) {
+    .onlymobileslider {
+      display: block;
+    }
+
+    .onlymobileslider .slider-container {
+      position: relative;
+      width: 100vw;
+      height: 344px;
+      overflow: hidden;
+    }
+
+    .onlymobileslider .slider {
+      display: flex;
+      height: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-left: calc((100vw - 250px) / 2);
+      scroll-snap-type: x mandatory;
+      background-color: #322100;
+    }
+
+    .onlymobileslider .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .onlymobileslider .item {
+      flex-shrink: 0;
+      width: 250px;
+      /* height: 100%; */
+      margin: 10px 5px;
+      background-size: cover;
+      background-position: center;
+      scroll-snap-align: center;
+    }
+
+    .onlymobileslider .slider-container::before,
+    .onlymobileslider .slider-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .onlymobileslider .slider-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    }
+
+    .onlymobileslider .slider-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+    }
+
+    .onlymobileslider .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      z-index: 3;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+    }
+
+    .onlymobileslider .arrow-left {
+      left: 20px;
+    }
+
+    .onlymobileslider .arrow-right {
+      right: 20px;
+    }
+  }
+</style>
+
+<body>
+  <div class="containersbody">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 header-bg home-box-shadow hidespaceset" id="main-scroller">
+          <!--====================== START NAVIGATION ======================-->
+          <!-- DESKTOP VIEW -->
+          <div class="container-fluid desktop-view">
+            <div class="row">
+              <div class="navbar-wrapper navbarss scroll-handle">
+                <nav class="header-navbar">
+                  <div class="navbar-left">
+                    <a href="./index.html" class="nav-icon">
+                      <img src="./assets/images/GraterThings.png" alt="" />
+                    </a>
+                    <div class="menu-links">
+                      <a href="collection.html" class="menu-item">COLLECTIONS</a>
+                      |
+                      <a href="partner.html" class="nav-item">PARTNERS</a>
+                    </div>
+                  </div>
+
+                  <!-- <div class="home_img">
+                    <a href="./index.html">
+                      <img src="./assets/images/nav_logo.png" alt="Center Image" class="center-image" />
+                    </a>
+                  </div> -->
+
+                  <div class="navbar-right">
+                    <div class="menu-links">
+                      <a href="./contactus.html" class="menu-item">CONTACT US</a>
+                      |
+                      <a href="./about.html" class="menu-item">OUR HISTORY</a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOBILE VIEW -->
+          <div class="container-fluid mobile-view">
+            <div class="row">
+              <nav class="navbar-content">
+                <!-- Left Logo -->
+                <div class="navbar-logo">
+                  <a href="./index.html">
+                    <img src="./assets/images/mobile-logo.png" alt="Logo" />
+                  </a>
+                </div>
+
+                <!-- Right Side Navigation (Stacked) -->
+                <div class="navbar-menu">
+                  <a href="collection.html" class="navbar-item">COLLECTIONS</a>
+                  <a href="./about.html" class="navbar-item">OUR HISTORY</a>
+                  <a href="./contactus.html" class="navbar-item">CONTACT US</a>
+                  <a href="partner.html" class="navbar-item">PARTNERS</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!--====================== END NAVIGATION ======================-->
+
+          <!--====================== START CONTENT ======================-->
+          <div class="container-fluid mobile-home-first">
+            <div class="row">
+              <div class="container mb-30">
+                <div class="row">
+                  <div class="top-image-section">
+                    <div class="header-bg-set scroll-logo-wrapper">
+                      <a href="./contactus.html">
+                        <img src="./assets/images/header_logo11.png" alt="" class="scroll-handle main-logo"
+                          id="scroll-logo" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="setofimage">
+            <div class="container-fluid extra-section">
+              <div class="row">
+                <div class="mb-30">
+                  <div class="text-center mb-3 textitalic">
+                    <h5>Scroll Down For More</h5>
+                  </div>
+                  <div class="collection-btn-set">
+                    <a href="./contactus.html" class="buttoncommon">CRAFT GARMENTS WITH US</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- START INNER CONTENT -->
+          <div class="container-fluid full-container hidecontainer">
+            <div class="row no-gutters">
+              <div class="mb-2 full-container">
+
+                <div class="banner-set">
+                  <div class="banner_content">
+                    <h6 class="padded-heading text-center">
+                      YOUR ALL-IN-ONE <span class="br-sm-only"><br /></span>
+                      CUSTOM GARMENT <span class="br-sm-only"><br /></span>
+                      DESIGNERS <br />
+                      AND PRODUCERS
+                    </h6>
+                    <div class="collection-btn-set mb-30">
+                      <a href="./contactus.html" class="buttoncommon hide-on-mobile">CRAFT GARMENTS WITH US</a>
+                    </div>
+                    <div class="collection-btn-set mb-30 hide-on-mobile">
+                      <a href="./collection.html" class="buttoncommon">VIEW ALL COLLECTIONS</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="container-fluid home-secound full-container">
+                <div class="collection-btn-set mb-30 collection-btn-set-mobile">
+                  <a href="./contactus.html" class="buttoncommon show-on-mobile">CRAFT GARMENTS WITH US</a>
+                </div>
+                <div>
+                  <div class="mb-30">
+                    <div class="onlymobileslider">
+                      <div class="slider-container">
+                        <button class="arrow arrow-left" onclick="scrollLeft('slider1')"><i
+                            class="fa-solid fa-arrow-left-long"></i></button>
+                        <button class="arrow arrow-right" onclick="scrollRight('slider1')"><i
+                            class="fa-solid fa-arrow-right-long"></i></button>
+                        <div class="slider" id="slider1"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="container-fluid home-secound full-container">
+                <div class="collection-btn-set mb-30 show-on-mobile collection-btn-set-mobiles">
+                  <a href="./collection.html" class="buttoncommon">VIEW ALL COLLECTIONS</a>
+                </div>
+                <div class="mb-30">
+                  <div class="onlymobileslider">
+                    <div class="slider-container">
+                      <button class="arrow arrow-left" onclick="scrollLeft('slider2')"><i
+                          class="fa-solid fa-arrow-left-long"></i></button>
+                      <button class="arrow arrow-right" onclick="scrollRight('slider2')"><i
+                          class="fa-solid fa-arrow-right-long"></i></button>
+                      <div class="slider" id="slider2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mb-30">
+                <div class="row">
+                  <div class="funds-section">
+                    <!-- <div class="border-line desc-text">
+                      YOUR STORY MATTERS
+                    </div>
+                    <h1 class="amount"><span>$</span>14,700<span>+</span></h1>
+                    <div class="borders-line desc-text">
+                      IN FUNDS RAISED FOR OUR PARTNERS
+                    </div> -->
+                    <img src="./assets/images/secrate.png" alt="" class="funds-sections-hide">
+                    <img src="./assets/images/secrate1.png" alt="" class="funds-sections-show">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="home-desc-btn">
+                    <div class="section-title ">
+                      <h3 class="craft-title">
+                        TAKE YOUR FUNDRAISING TO THE NEXT LEVEL OF<br />
+                        COMMUNITY ENGAGEMENT WITH US
+                      </h3>
+                    </div>
+                    <div class="doublebutton">
+                      <div class="button-container">
+                        <div class="button-row">
+                          <a href="./about.html" class="custom-btn">OUR HISTORY</a>
+                          <a href="./contactus.html" class="custom-btn">CONTACT US</a>
+                        </div>
+                        <a href="./collection.html" class="custom-btn full-width d-none">SHOP CURRENT COLLECTIONS</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mb-30 home-purpose">
+                <!-- Features Section -->
+                <div class="row text-center">
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <h3 class="category-title">PURPOSE</h3>
+                    <div class="ind-purchase-feature">
+                      <ul class="feature-list homelist">
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          SUSTAINABLY CRAFTED
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          COMFORT ORIENTED
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          TAILORED FITTING
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <h3 class="category-title">AESTHETICS</h3>
+                    <div class="ind-purchase-feature">
+                      <ul class="feature-list homelist">
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          HISTORICALLY WOVEN
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          PRECISELY DETAILED
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          EXPERTLY DESIGNED
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <h3 class="category-title">LONGEVITY</h3>
+                    <div class="ind-purchase-feature">
+                      <ul class="feature-list homelist">
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          HANDCRAFTED TOUCH
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          PREMIUM THREADS
+                        </li>
+                        <li>
+                          <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+                          DURABLE FABRICS
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid home-discover">
+                <div class="row">
+                  <div>
+                    <div class="section-title">
+                      <h3>DISCOVER THE THREADS THAT WEAVE YOUR STORY</h3>
+                      <p>
+                        JOIN US IN TRANSFORMING THE PROMOTIONAL APPAREL
+                        INDUSTRY ONE COLLECTION AT A TIME WITH LOVE, PASSION,
+                        AND EXPERTISE.
+                      </p>
+                    </div>
+
+                    <div class="collection-btn-set mb-50 home-btn">
+                      <a href="./contactus.html" class="buttoncommon hide-on-mobile">CRAFT GARMENTS WITH US</a>
+                      <a href="./collection.html" class="buttoncommon show-on-mobile">VIEW CURRENT COLLECTIONS</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mb-30 d-none">
+                <div class="row">
+                  <div class="section-title">
+                    <h3>TESTIMONIALS FROM OUR TRUSTED PARTNERS</h3>
+                  </div>
+                  <div class="col-md-12 col-lg-6">
+                    <div class="d-none">
+                      <!-- <div class="bordertip">
+                                                <img src="./assets/images/Large_Right_Top.svg" alt="">
+                                            </div> -->
+                      <div class="testimonial-container">
+                        <div class="setborder">
+                          <div class="testimonial-img">
+                            <img src="./assets/images/Aidan.png" class="img-fluid" alt="Testimonial Image" />
+                          </div>
+                          <div class="testimonial-text">
+                            <h3>
+                              <span class="testimonial-name">Aidan Turner</span>
+                              <br />
+                              <span>Founder & CEO</span>
+                            </h3>
+                            <p>
+                              “Type here to show a <br />quote said by the
+                              <br />individual in the <br />photo to the left
+                              of<br />
+                              this text.”
+                            </p>
+                            <h3 class="testimonial-name">
+                              Mount Saint <br />Charles Academy
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="bordertip">
+                                                <img src="./assets/images/Large_Right_Bottom.svg" alt="">
+                                            </div> -->
+                    </div>
+                    <div>
+                      <div class="bordertip_top"></div>
+                      <div class="testimonial-container">
+                        <div class="setborder">
+                          <div class="testimonial-img">
+                            <img src="./assets/images/Aidan.png" class="img-fluid" alt="Testimonial Image" />
+                          </div>
+                          <div class="testimonial-text">
+                            <h3>
+                              <span class="testimonial-name">Aidan Turner</span>
+                              <br />
+                              <span>Founder & CEO</span>
+                            </h3>
+                            <p>
+                              “Type here to show a <br />quote said by the
+                              <br />individual in the <br />photo to the left
+                              of<br />
+                              this text.”
+                            </p>
+                            <h3 class="testimonial-name">
+                              Mount Saint <br />Charles Academy
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bordertip_btm"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6">
+                    <div>
+                      <div class="bordertip_top"></div>
+                      <div class="testimonial-container">
+                        <div class="setborder">
+                          <div class="testimonial-img">
+                            <img src="./assets/images/Aidan.png" class="img-fluid" alt="Testimonial Image" />
+                          </div>
+                          <div class="testimonial-text">
+                            <h3>
+                              <span class="testimonial-name">Aidan Turner</span>
+                              <br />
+                              <span>Founder & CEO</span>
+                            </h3>
+                            <p>
+                              “Type here to show a <br />quote said by the
+                              <br />individual in the <br />photo to the left
+                              of<br />
+                              this text.”
+                            </p>
+                            <h3 class="testimonial-name">
+                              Mount Saint <br />Charles Academy
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bordertip_btm"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="collection-btn-set last-section">
+                  <a href="./about.html" class="buttoncommon">READ MORE TESTIMONIALS</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END INNER CONTENT -->
+
+          <!--====================== END CONTENT ======================-->
+
+          <!--====================== START FOOTER ======================-->
+
+          <!-- DESKTOP VIEW -->
+          <div class="container-fluid desktop-view scrolling-footer">
+            <div class="row">
+              <nav class="custom-footer">
+                <div class="footer-content">
+                  <!-- Left Icon -->
+                  <div class="social-icons">
+                    <a href="https://www.tiktok.com/@graterthingsthreads" class="icon" target="_blank"><i
+                        class="fab fa-tiktok"></i></a>
+                    <a href="https://www.pinterest.com/graterthingsthreads" class="icon" target="_blank"><i
+                        class="fa-brands fa-pinterest"></i></a>
+                  </div>
+
+                  <!-- Center Purchase Button -->
+                  <div class="footer-text-line d-flex">
+                    <p class="footer-text">
+                      AUTHENTIC GARMENTS SINCE <span>2020</span><br />PREMIUM GARMENT
+                      DESIGN & SUPPLY CO.
+                    </p>
+                  </div>
+
+                  <!-- Right Icon -->
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com/aidanrturner/" class="icon" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/graterthingsthreads/" class="icon" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <!-- MOBILE VIEW -->
+          <!-- MOBILE VIEW -->
+          <div class="container-fluid mobile-view">
+            <div class="row">
+              <div class="footer-content-set">
+                <div class="mb-30">
+                  <div class="collection-btn-set">
+                    <a href="./contactus.html" class="buttoncommon">CRAFT GARMENTS WITH US</a>
+                  </div>
+                </div>
+
+                <div class="social-icons mb-30">
+                  <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon-mobile-view"
+                    aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                  <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon-mobile-view"
+                    aria-label="PayPal"><i class="fa-brands fa-pinterest"></i></a>
+                  <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon-mobile-view"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon-mobile-view"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="mb-30">
+                  <div class="email-section logo-mail">
+                    <div class="footer-logo">
+                      <a href="#">
+                        <img src="./assets/images/mobile-logo.png" alt="Logo" />
+                      </a>
+                    </div>
+
+                    <div class="email-info">
+                      <p class="email-title">INQUIRE VIA EMAIL:</p>
+                      <p class="email-address">
+                        <a href="mailto:contactgrater@gmail.com">contactgrater@gmail.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid mobile-footer-text">
+              <p class="footer-text">
+                AUTHENTIC GARMENTS SINCE 2020<br />PREMIUM GARMENT DESIGN & SUPPLY
+                CO.
+              </p>
+            </div>
+          </div>
+
+
+          <!--====================== END FOOTER ======================-->
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 home-right-side" id="right-scroller">
+          <div class="row bgbrown">
+            <!-- Gallery Column 1 -->
+            <div class="col-4 gallery-column">
+              <div class="gallery-content">
+                <!-- <a href="./"> -->
+                <div class="gallery-item">
+                  <img src="./assets/images/GraterThings/GraterThings20.png" alt="Image 1" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. I</h2>
+                      <p>Grater Things Threads</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- </a> -->
+                <div class="gallery-item">
+                  <img src="./assets/images/MountSaintCharlesAcademy/DecadesCollection/DecadesCollection1.png"
+                    alt="Image 2" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. II</h2>
+                      <p>Mount Saint Charles Academy</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/CampKesem/campkesen1.png" alt="Image 3" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. III</h2>
+                      <p>Camp Kesem at Syracuse University</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/Ottothon/OttothonTote7.png" alt="Image 4" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. IV</h2>
+                      <p>Ottothon</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item">
+                  <img src="./assets/images/SyracuseUniversitySchool/Syracuse1.png" alt="Image 1" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. V</h2>
+                      <p>Syracuse University School of Architecture</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/JMichaelShoes/JMichaelShoes1.png" alt="Image 2" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. VI</h2>
+                      <p>J Michael Shoes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/MountSaintCharlesAcademy/DecadesCollection/DecadesCollection2.png"
+                    alt="Image 2" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. VII</h2>
+                      <p>Mount Saint Charles Academy</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/PhantomFarms/PhantomFarms1.png" alt="Image 4" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. VIII</h2>
+                      <p>Phantom Farms</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Column 2 -->
+            <div class="col-4 gallery-column">
+              <div class="gallery-content">
+                <div class="gallery-item">
+                  <img src="./assets/images/Selfloved/Selfloved1.png" alt="Image 5" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. IX</h2>
+                      <p>Selfloved Clothing Co.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/GraterThings/GraterThings1.png" alt="Image 6" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. X</h2>
+                      <p>Grater Things</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/digitaltoxicity/digitaltoxicity1.png" alt="Image 7" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XI</h2>
+                      <p>digital_toxicity</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/StuckSleeping/StuckSleeping1.png" alt="Image 8" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XII</h2>
+                      <p>Stuck Sleeping</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item">
+                  <img src="./assets/images/PhantomFarms/PhantomFarms5.png" alt="Image 4" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XIII</h2>
+                      <p>Phantom Farms</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/MountSaintCharlesAcademy/AcceptanceTShirts/AcceptanceTShirts1.png"
+                    alt="Image 6" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XIV</h2>
+                      <p>Mount Saint Charles Academy</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/CampKesem/campkesen2.png" alt="Image 7" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XV</h2>
+                      <p>Camp Kesem at Syracuse University</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/Ottothon/OttothonTote2.png" alt="Image 8" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XVI</h2>
+                      <p>Ottothon</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Column 3 -->
+            <div class="col-4 gallery-column">
+              <div class="gallery-content">
+                <div class="gallery-item">
+                  <img src="./assets/images/SyracuseUniversitySchool/Syracuse2.png" alt="Image 9" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XVII</h2>
+                      <p>Syracuse University School of Architecture</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/JMichaelShoes/JMichaelShoes4.png" alt="Image 10" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XVIII</h2>
+                      <p>J Michael Shoes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/GraterThings/GraterThings13.png" alt="Image 11" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XIX</h2>
+                      <p>Grater Things</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/MountSaintCharlesAcademy/DecadesCollection/DecadesCollection9.png"
+                    alt="Image 2" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XX</h2>
+                      <p>Mount Saint Charles Academy</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item">
+                  <img src="./assets/images/PhantomFarms/PhantomFarms4.png" alt="Image 9" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XXI</h2>
+                      <p>Phantom Farms</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/Selfloved/Selfloved5.png" alt="Image 10" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. XXII</h2>
+                      <p>Selfloved Clothing Co.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/CampKesem/campkesen3.png" alt="Image 3" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. VII</h2>
+                      <p>Camp Kesem at Syracuse University</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery-item">
+                  <img src="./assets/images/digitaltoxicity/digitaltoxicity2.png" alt="Image 12" />
+                  <div class="overlay">
+                    <div class="overlay-text">
+                      <h2>Fig. VII</h2>
+                      <p>digital_toxicity</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="</div> -->
+          <!-- <div id="right-scroll-notice" class="movetext">MOVE CURSOR TO LEFT SIDE OF SCREEN TO CONTINUE SCROLLING
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightboxModal" class="lightbox-modal" style="display:none;">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightboxImage" class="lightbox-content" src="" alt="Zoomed Image" />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollableDiv = document.getElementById("main-scroller");
+      const rightScrollableDiv = document.getElementById("right-scroller");
+      const navbarss = document.querySelector(".navbarss");
+      const centerImage = document.querySelector(".center-image");
+      const topImageSection = document.querySelector(".top-image-section");
+      const footer = document.querySelector(".scrolling-footer");
+      const headers = document.querySelector(".scrolling-header");
+
+      function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function () {
+          const context = this;
+          const args = arguments;
+          if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+              if (Date.now() - lastRan >= limit) {
+                func.apply(context, args);
+                lastRan = Date.now();
+              }
+            }, limit - (Date.now() - lastRan));
+          }
+        };
+      }
+
+      const handleScroll = throttle(() => {
+        const scrollY = scrollableDiv.scrollTop;
+
+        if (scrollY > 10) {
+          footer.classList.add("scrolled-footer");
+        } else {
+          footer.classList.remove("scrolled-footer");
+        }
+
+        const logo = document.querySelector('#scroll-logo');
+        const scrollHandle = document.querySelector('.scroll-handle');
+        const setofimage = document.querySelector('.setofimage');
+        const headerBgSet = document.querySelector('.header-bg-set');
+        const stickyOffset = logo.offsetTop;
+        const maxScroll = 380;
+        const maxWidth = 70;
+        const minWidth = 20;
+        const scrollYt = Math.min(scrollY, maxScroll);
+        const progress = (scrollYt / maxScroll);
+        const newWidth = maxWidth - (progress * (maxWidth - minWidth));
+
+        if (scrollY > 230) {
+          logo.style.width = '6%';
+          logo.style.height = 'auto';
+          logo.style.position = 'fixed';
+          logo.style.top = '10px';
+          logo.style.left = '23%';
+          logo.style.transition = 'none';
+        } else {
+          logo.style.width = `${newWidth}%`;
+          logo.style.height = 'auto';
+          logo.style.position = 'unset';
+          logo.style.top = 'auto';
+          logo.style.left = 'auto';
+          logo.style.transition = 'width 0.1s linear';
+        }
+
+        if (scrollY > 550) {
+          logo.classList.add('hidden-top-header');
+          scrollHandle.classList.add('hidden-top-header');
+        } else {
+          logo.classList.remove('hidden-top-header');
+          scrollHandle.classList.remove('hidden-top-header');
+        }
+      }, 10);
+
+      scrollableDiv.addEventListener("scroll", handleScroll);
+
+      const galleryColumns = document.querySelectorAll(".gallery-column");
+      let animationFrameId;
+      const scrollSpeed = 7;
+
+      function startScrolling(direction) {
+        stopScrolling();
+
+        function animateScroll() {
+          galleryColumns.forEach((column, index) => {
+            const galleryContent = column.querySelector(".gallery-content");
+            const scrollAmount =
+              (index % 2 === 0 ? 1 : -1) *
+              (direction === "up" ? -scrollSpeed : scrollSpeed);
+
+            let currentY =
+              parseFloat(
+                galleryContent.style.transform.replace(/[^-\d.]/g, "")
+              ) || 0;
+            const maxScroll = -galleryContent.scrollHeight / 3;
+            const minScroll = 0;
+
+            let newY = currentY + scrollAmount;
+            if (newY <= maxScroll) newY = minScroll;
+            else if (newY >= minScroll) newY = maxScroll;
+
+            galleryContent.style.transform = `translateY(${newY}px)`;
+          });
+
+          animationFrameId = requestAnimationFrame(animateScroll);
+        }
+
+        animationFrameId = requestAnimationFrame(animateScroll);
+      }
+
+      function stopScrolling() {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      function bindGalleryScroll(div) {
+        div.addEventListener("wheel", (event) => {
+          startScrolling(event.deltaY > 0 ? "down" : "up");
+          setTimeout(stopScrolling, 200);
+        });
+      }
+
+      bindGalleryScroll(scrollableDiv);
+      bindGalleryScroll(rightScrollableDiv);
+
+      rightScrollableDiv.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scrollableDiv.scrollTop += e.deltaY;
+      }, { passive: false });
+
+      scrollableDiv.addEventListener('scroll', () => {
+        rightScrollableDiv.scrollTop = scrollableDiv.scrollTop;
+      });
+
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          startScrolling(event.key === "ArrowDown" ? "down" : "up");
+        }
+      });
+
+      document.addEventListener("keyup", (event) => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          stopScrolling();
+        }
+      });
+    });
+  </script>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/collection.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+  <script>
+    const allCollectionLists = collectionData[12];
+    var imgshow = "";
+    var collection_imgs = "";
+
+    for (let i = 0; i < allCollectionLists.collections[0].collection_img.length; i++) {
+      imgshow = allCollectionLists.collections[0].collection_img[i];
+      const collection_img = `
+    <div class="col special_height">
+      <div class="collection-img">
+        <img src="${imgshow}" alt="">
+      </div>
+    </div>`;
+      collection_imgs += collection_img;
+    }
+
+    document.getElementById("mobile_imgShow").innerHTML = collection_imgs;
+
+  </script>
+
+  <script>
+    const allPartnerCollectionLists = collectionData[8];
+    var imgshow = "";
+    var collection_imgs = "";
+
+    for (let i = 0; i < allPartnerCollectionLists.collections[0].collection_img.length; i++) {
+      imgshow = allPartnerCollectionLists.collections[0].collection_img[i]; // reusing declared variable
+      const collection_img = `
+    <div class="col special_height">
+      <div class="collection-img">
+        <img src="${imgshow}" alt="">
+      </div>
+    </div>`;
+      collection_imgs += collection_img;
+    }
+
+    document.getElementById("mobile_partnershow").innerHTML = collection_imgs;
+
+    $(document).ready(function () {
+      // Open lightbox on image click inside mobile_imgShow
+      $('#mobile_imgShow').on('click', 'img', function () {
+        var src = $(this).attr('src');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
+
+      // Close lightbox when clicking on close icon
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
+
+      // Optional: Close lightbox when clicking outside image
+      $('#lightboxModal').click(function (e) {
+        if (!$(e.target).is('#lightboxImage')) {
+          $('#lightboxModal').fadeOut();
+        }
+      });
+    });
+
+    $(document).ready(function () {
+      // Open lightbox on image click inside mobile_imgShow
+      $('#mobile_partnershow').on('click', 'img', function () {
+        var src = $(this).attr('src');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
+
+      // Close lightbox when clicking on close icon
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
+
+      // Optional: Close lightbox when clicking outside image
+      $('#lightboxModal').click(function (e) {
+        if (!$(e.target).is('#lightboxImage')) {
+          $('#lightboxModal').fadeOut();
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const leftScroller = document.getElementById("main-scroller");
+      const rightScroller = document.getElementById("right-scroller");
+
+      let isSyncingLeftScroll = false;
+      let isSyncingRightScroll = false;
+
+      leftScroller.addEventListener("scroll", function () {
+        if (!isSyncingLeftScroll) {
+          isSyncingRightScroll = true;
+          rightScroller.scrollTop = leftScroller.scrollTop;
+        }
+        isSyncingLeftScroll = false;
+      });
+
+      rightScroller.addEventListener("scroll", function () {
+        if (!isSyncingRightScroll) {
+          isSyncingLeftScroll = true;
+          leftScroller.scrollTop = rightScroller.scrollTop;
+        }
+        isSyncingRightScroll = false;
+      });
+    });
+
+
+
+  </script>
+
+
+
+  <script>
+    const repeatCount = 5;
+    const itemWidth = 250;
+    const itemGap = 20;
+
+    // ✅ Render slider with optional reverse
+    function renderSlider(containerId, images, reverse = false) {
+      const slider = document.getElementById(containerId);
+
+      for (let i = 0; i < repeatCount; i++) {
+        const list = (i % 2 === 0 ? images : [...images].reverse());
+
+        const finalList = reverse ? [...list].reverse() : list;
+
+        finalList.forEach(url => {
+          const div = document.createElement("div");
+          div.className = "item";
+
+          const img = document.createElement("img");
+          img.src = url;
+          img.alt = "Slider Image";
+          img.style.width = "100%";
+          img.style.height = "auto";
+          img.style.cursor = "pointer";
+
+          div.appendChild(img);
+          slider.appendChild(div);
+
+          // Image pe click event lagao
+          img.addEventListener("click", () => {
+            const lightbox = document.getElementById("lightboxModal");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightboxImage.src = url;
+            lightbox.style.display = "block";
+          });
+
+        });
+      }
+
+      const totalItems = slider.children.length;
+      const fullItem = itemWidth + itemGap;
+      const scrollTo = (totalItems / 2) * fullItem - (itemWidth / 2 + itemGap / 2);
+      slider.scrollLeft = scrollTo;
+    }
+
+    // ✅ Arrows
+    function scrollLeft(id) {
+      const slider = document.getElementById(id);
+      slider.scrollLeft -= itemWidth + itemGap;
+    }
+
+    function scrollRight(id) {
+      const slider = document.getElementById(id);
+      slider.scrollLeft += itemWidth + itemGap;
+    }
+
+    // ✅ Initialize both sliders on load
+    window.onload = () => {
+      if (window.innerWidth <= 767) {
+        const images = MobileImag[0].Image;
+        renderSlider("slider1", images);             // normal order
+        renderSlider("slider2", images, true);       // reverse order
+      }
+    };
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Image click pe modal open karo
+      $('#slider1, #slider2').on('click', 'img', function () {
+        const src = $(this).attr('src');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
+
+      // Close button pe modal close karo
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
+
+      // Modal ke bahar click karne pe bhi close karo (optional)
+      $('#lightboxModal').click(function (e) {
+        if (e.target.id === 'lightboxModal') {
+          $(this).fadeOut();
+        }
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

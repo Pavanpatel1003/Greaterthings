@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INDIVIDUAL COLLECTION PAGE - GRATER THINGS THREADS</title>
+  <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+  <script src="./assets/js/fontawesome.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <style>
+    .onlymobileslider {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .onlymobileslider {
+        display: block;
+      }
+
+      .slider-container {
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      .slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 25vw;
+        /* Creates the half-visible left and right sides */
+        scroll-snap-type: x mandatory;
+      }
+
+      .slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .item {
+        flex: 0 0 50vw;
+        height: 310px;
+        margin: 10px 5px;
+        background-size: cover;
+        background-position: center;
+        scroll-snap-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        color: white;
+        background: transparent;
+        border: none;
+        padding: 10px 14px;
+        cursor: pointer;
+        z-index: 3;
+        border-radius: 50%;
+      }
+
+      .arrow-left {
+        left: 10px;
+      }
+
+      .arrow-right {
+        right: 10px;
+      }
+
+      .slider-container::before,
+      .slider-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .slider-container::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+      }
+
+      .slider-container::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="containersbody">
+    <div class="boxshadow_set">
+      <!--====================== START NAVIGATION ======================-->
+      <!-- DESKTOP VIEW -->
+      <div class="container-fluid desktop-view body-background">
+        <div class="row">
+          <nav class="custom-navbar">
+            <div class="navbar-content">
+              <a href="./index.html" class="nav-icon">
+                <img src="./assets/images/GraterThings.png" alt="" />
+              </a>
+
+              <div class="nav-links d-flex">
+                <a href="collection.html" class="nav-item">COLLECTIONS</a> |
+                <a href="partner.html" class="nav-item">PARTNERS</a>
+              </div>
+
+              <a href="collection.html" class="particular-page">COLLECTIONS</a>
+
+              <div class="nav-links d-flex">
+                <a href="./contactus.html" class="nav-item">CONTACT US</a> |
+                <a href="./about.html" class="nav-item">OUR HISTORY</a>
+              </div>
+
+              <a href="./contactus.html" class="nav-icon">
+                <img src="./assets/images/Shopping_Cart.png" alt="" />
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- MOBILE VIEW -->
+      <div class="container-fluid mobile-view">
+        <div class="row">
+          <nav class="navbar-content">
+            <!-- Left Logo -->
+            <div class="navbar-logo">
+              <a href="./index.html">
+                <img src="./assets/images/mobile-logo.png" alt="Logo" />
+              </a>
+            </div>
+
+            <!-- Right Side Navigation (Stacked) -->
+            <div class="navbar-menu">
+              <a href="collection.html" class="navbar-item">COLLECTIONS</a>
+              <a href="./about.html" class="navbar-item">OUR HISTORY</a>
+              <a href="./contactus.html" class="navbar-item">CONTACT US</a>
+              <a href="partner.html" class="navbar-item">PARTNERS</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!--====================== END NAVIGATION ======================-->
+
+      <!--====================== START CONTENT ======================-->
+      <div class="content mobile_space">
+        <div class="container-fluid content-desktop">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-2 g-lg-3" id="imgShow"></div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 section-spacing-equal">
+              <div>
+                <div>
+                  <div class="collection-desc-heading mb-30">
+                    <h3 id="collection_name"></h3>
+                  </div>
+                  <div class="collection-desc-subtitle mb-30">
+                    <span id="organization_name"></span>
+                    <a href="#" target="_blank" class="collection-des-learn-btn">LEARN MORE</a>
+                  </div>
+                  <div class="collection-desc mb-30">
+                    <p id="collection_desc"></p>
+                  </div>
+                </div>
+                <div class="collection-content-set mb-30">
+                  <div class="ind-purchase-feature">
+                    <ul class="feature-list" id="listShow"></ul>
+                  </div>
+                  <div class="d-none">
+                    <div class="bordertip_top"></div>
+                    <div class="testimonial-container">
+                      <div class="setborder">
+                        <div class="testimonial-img">
+                          <img src="./assets/images/Aidan.png" class="img-fluid" alt="Testimonial Image" />
+                        </div>
+                        <div class="testimonial-text">
+                          <h3>
+                            <span class="testimonial-name">Aidan Turner</span>
+                            <br />
+                            <span>Founder & CEO</span>
+                          </h3>
+                          <p>
+                            “Type here to show a <br />quote said by the
+                            <br />individual in the <br />photo to the left
+                            of<br />
+                            this text.”
+                          </p>
+                          <h3 class="testimonial-name">
+                            Mount Saint <br />Charles Academy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bordertip_btm"></div>
+                  </div>
+                </div>
+                <div class="mb-30 ">
+                  <div class="collection-btn-set">
+                    <a href="./collection.html" class="buttoncommon">VIEW ALL COLLECTIONS</a>
+                    <a href="./contactus.html" class="buttoncommon">CRAFT GARMENTS WITH US</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid content-mobile">
+        <div class="row">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="d-flex justify-content-center mb-4 nav-buttons">
+                <button class="btn" onclick="PreviousCollectionData()">
+                  LAST
+                </button>
+                <a href="./collection.html" class="btn">ALL COLLECTIONS</a>
+                <button class="btn" onclick="NextCollectionData()">
+                  NEXT
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="container mb-4">
+                <div class="mobile-fig mb-3">
+                  <!-- <p>No. 1</p> -->
+                  <p id="mobile-collection-number">No. 1</p>
+                </div>
+                <h3 class="fw-bold mb-3">
+                  <span id="mobile_collection_name"></span>
+                </h3>
+                <div class="collection-desc-subtitle mobile_ind mb-3">
+                  <span id="mobile_organization_name"></span>
+                </div>
+                <div class="collection-desc mb-3">
+                  <p id="mobile_collection_desc"></p>
+                </div>
+                <div class="collection-content-set mb-3">
+                  <div class="ind-purchase-feature">
+                    <ul class="feature-list mobile_ind" id="mobile_listShow"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-30" id="mobile_imgShow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--====================== END CONTENT ======================-->
+    </div>
+
+    <!--====================== START FOOTER ======================-->
+
+    <!-- DESKTOP VIEW -->
+    <div class="container-fluid desktop-view body-background">
+      <div class="row">
+        <nav class="custom-footer">
+          <div class="footer-content">
+            <!-- Left Icon -->
+            <div class="social-icons">
+              <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i
+                  class="fab fa-tiktok"></i></a>
+              <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon"><i
+                  class="fa-brands fa-pinterest"></i></a>
+              <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+
+            <!-- Center Purchase Button -->
+            <div class="footer-text-line d-flex">
+              <p class="footer-text">
+                AUTHENTIC GARMENTS SINCE <span>2020</span><br />PREMIUM GARMENT DESIGN &
+                SUPPLY CO.
+              </p>
+            </div>
+
+            <!-- Right Icon -->
+            <div class="social-icons">
+              <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i
+                  class="fab fa-tiktok"></i></a>
+              <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon"><i
+                  class="fa-brands fa-pinterest"></i></a>
+              <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- MOBILE VIEW -->
+    <div class="container-fluid mobile-view">
+      <div class="row">
+        <div class="footer-content-set">
+          <div class="mb-30">
+            <div class="collection-btn-set">
+              <a href="./contactus.html" class="buttoncommon">CRAFT GARMENTS WITH US</a>
+            </div>
+          </div>
+
+          <div class="social-icons mb-30">
+            <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon-mobile-view"
+              aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon-mobile-view"
+              aria-label="PayPal"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon-mobile-view"
+              aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon-mobile-view"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <div class="mb-30">
+            <div class="email-section logo-mail">
+              <div class="footer-logo">
+                <a href="#">
+                  <img src="./assets/images/mobile-logo.png" alt="Logo" />
+                </a>
+              </div>
+
+              <div class="email-info">
+                <p class="email-title">INQUIRE VIA EMAIL:</p>
+                <p class="email-address">
+                  <a href="mailto:contactgrater@gmail.com">contactgrater@gmail.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid mobile-footer-text">
+        <p class="footer-text">
+          AUTHENTIC GARMENTS SINCE 2020<br />PREMIUM GARMENT DESIGN & SUPPLY
+          CO.
+        </p>
+      </div>
+    </div>
+
+    <!--====================== END FOOTER ======================-->
+  </div>
+
+  <div id="lightboxModal" class="lightbox-modal" style="display:none;">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightboxImage" class="lightbox-content" src="" alt="Zoomed Image" />
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Replace this part inside your script block where you're assigning `mobile_imgShow` -->
+  <script>
+    function flattenData() {
+      const flattenedData = collectionData.flatMap((org) =>
+        org.collections.map((collection) => ({
+          ...org,
+          ...collection,
+        }))
+      );
+      const final = flattenedData.map(({ collections, ...rest }) => rest);
+      return final;
+    }
+
+    const finalData = flattenData();
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const orgId = urlParams.get("orgid");
+    const collection_id = urlParams.get("collection_id");
+
+    const currentIndex = finalData.findIndex(
+      (item) =>
+        item.organization_id == orgId &&
+        item.collection_id == collection_id
+    );
+
+    let dataStore = collectionData.find(item => item.organization_id == orgId);
+    document.getElementById("organization_name").innerHTML = dataStore.organization_name;
+    document.getElementById("mobile_organization_name").innerHTML = dataStore.organization_name;
+
+    let indivisualCollection = dataStore.collections.find(col => col.collection_id == collection_id);
+
+    // LIST
+    let collection_lists = "";
+    for (let i = 0; i < indivisualCollection.collection_list.length; i++) {
+      const item = indivisualCollection.collection_list[i];
+      collection_lists += `
+  <li>
+    <span class="me-2"><i class="fa-solid fa-xmark"></i></span>
+    ${item}
+  </li>`;
+    }
+
+    // IMAGES for Desktop
+    let collection_imgs = "";
+    for (let i = 0; i < indivisualCollection.collection_img.length; i++) {
+      const img = indivisualCollection.collection_img[i];
+      collection_imgs += `
+  <div class="col special_height">
+    <div class="collection-img">
+      <img src="${img}" alt="">
+    </div>
+  </div>`;
+    }
+
+    if (collection_id) {
+      // Desktop
+      document.getElementById("imgShow").innerHTML = collection_imgs;
+      document.getElementById("collection_name").innerHTML = indivisualCollection.collection_name;
+      document.getElementById("collection_desc").innerHTML = indivisualCollection.collection_description;
+      document.getElementById("listShow").innerHTML = collection_lists;
+      document.querySelector('.collection-des-learn-btn').href = indivisualCollection.collection_link;
+
+      // ✅ Mobile Image Slider HTML Build
+      // Mobile image slider HTML build with looping
+      let mobileSliderHTML = `
+  <div class="onlymobileslider">
+    <div class="slider-container">
+      <button class="arrow arrow-left" onclick="slideLeft()"><i class="fa-solid fa-arrow-left-long"></i></button>
+      <div class="slider" id="customSlider">
+        <!-- images will be injected here -->
+      </div>
+      <button class="arrow arrow-right" onclick="slideRight()"><i class="fa-solid fa-arrow-right-long"></i></button>
+    </div>
+  </div>
+`;
+      document.getElementById("mobile_imgShow").innerHTML = mobileSliderHTML;
+
+
+      // Dynamically add initial images
+      const images = indivisualCollection.collection_img;
+      const slider = document.getElementById("customSlider");
+
+      images.forEach((img) => {
+        const div = document.createElement("div");
+        div.className = "item";
+        div.style.backgroundImage = `url('${img}')`;
+        slider.appendChild(div);
+      });
+
+
+
+      // Scroll to middle batch
+      setTimeout(() => {
+        const slider = document.getElementById("customSlider");
+        const children = slider.children;
+        const middleIndex = Math.floor(children.length / 3);
+        const offset = children[middleIndex].offsetLeft - slider.offsetWidth / 2 + children[middleIndex].offsetWidth / 2;
+        slider.scrollTo({ left: offset, behavior: "instant" });
+      }, 100);
+
+      // Arrow controls
+      window.slideRight = function () {
+        const first = slider.children[0];
+        const clone = first.cloneNode(true);
+        slider.appendChild(clone);
+
+        slider.scrollBy({ left: first.offsetWidth, behavior: 'smooth' });
+
+        setTimeout(() => {
+          slider.removeChild(first);
+          slider.scrollLeft -= first.offsetWidth;
+        }, 400);
+      };
+
+      window.slideLeft = function () {
+        const last = slider.children[slider.children.length - 1];
+        const clone = last.cloneNode(true);
+        slider.insertBefore(clone, slider.children[0]);
+        slider.scrollLeft += last.offsetWidth;
+
+        setTimeout(() => {
+          slider.scrollBy({ left: -last.offsetWidth, behavior: 'smooth' });
+          slider.removeChild(last);
+        }, 10);
+      };
+
+
+
+
+      // Mobile Text
+      document.getElementById("mobile_collection_desc").innerHTML = indivisualCollection.collection_description;
+      document.getElementById("mobile_collection_name").innerHTML = indivisualCollection.collection_name;
+      document.getElementById("mobile_listShow").innerHTML = collection_lists;
+
+      function toRoman(num) {
+        const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+        const value = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+        let result = '';
+        for (let i = 0; i < value.length; i++) {
+          while (num >= value[i]) {
+            result += roman[i];
+            num -= value[i];
+          }
+        }
+        return result;
+      }
+
+      const romanIndex = toRoman(currentIndex + 1);
+      document.getElementById("mobile-collection-number").innerHTML = `No. ${romanIndex}`;
+
+    } else {
+      document.getElementById("collection_desc").innerHTML = dataStore.collections[0].collection_description;
+      document.getElementById("collection_name").innerHTML = dataStore.collections[0].collection_name;
+      document.getElementById("mobile_collection_name").innerHTML = indivisualCollection.collection_name;
+    }
+
+    function getNextCollection(flatData, currentOrgId, currentCollectionId) {
+      const index = flatData.findIndex(
+        (item) => item.organization_id == currentOrgId && item.collection_id == currentCollectionId
+      );
+      if (index === -1 || index >= flatData.length - 1) return null;
+      return flatData[index + 1];
+    }
+
+    function getPreviousCollection(flatData, currentOrgId, currentCollectionId) {
+      const index = flatData.findIndex(
+        (item) => item.organization_id == currentOrgId && item.collection_id == currentCollectionId
+      );
+      if (index <= 0) return null;
+      return flatData[index - 1];
+    }
+
+    function NextCollectionData() {
+      const next = getNextCollection(finalData, Number(orgId), Number(collection_id));
+      const target = next || finalData[0];
+      if (target) {
+        window.location.href = `individual_collection.html?orgid=${target.organization_id}&collection_id=${target.collection_id}`;
+      }
+    }
+
+    function PreviousCollectionData() {
+      const prev = getPreviousCollection(finalData, Number(orgId), Number(collection_id));
+      const target = prev || finalData[finalData.length - 1];
+      if (target) {
+        window.location.href = `individual_collection.html?orgid=${target.organization_id}&collection_id=${target.collection_id}`;
+      }
+    }
+
+    $(document).ready(function () {
+      $('#mobile_imgShow').on('click', 'img', function () {
+        var src = $(this).attr('src');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
+
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
+
+      $('#lightboxModal').click(function (e) {
+        if (!$(e.target).is('#lightboxImage')) {
+          $('#lightboxModal').fadeOut();
+        }
+      });
+    });
+
+    // ✅ Slider Arrows
+    function slideLeft() {
+      const slider = document.getElementById("customSlider");
+      slider.scrollBy({ left: -260, behavior: "smooth" });
+    }
+
+    function slideRight() {
+      const slider = document.getElementById("customSlider");
+      slider.scrollBy({ left: 260, behavior: "smooth" });
+    }
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Image click pe modal open karo
+      $('#slider1, #slider2').on('click', 'img', function () {
+        const src = $(this).attr('src');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
+
+      // Close button pe modal close karo
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
+
+      // Modal ke bahar click karne pe bhi close karo (optional)
+      $('#lightboxModal').click(function (e) {
+        if (e.target.id === 'lightboxModal') {
+          $(this).fadeOut();
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+  // Mobile slider ke items pe click handle karenge
+  $('#mobile_imgShow').on('click', '.item', function () {
+    const bg = $(this).css('background-image'); 
+    // background-image: url("someurl")
+    const src = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+    $('#lightboxImage').attr('src', src);
+    $('#lightboxModal').fadeIn();
+  });
+
+  // Close button pe modal close karna
+  $('.close-lightbox').click(function () {
+    $('#lightboxModal').fadeOut();
+  });
+
+  // Modal ke bahar click karne pe bhi close karna
+  $('#lightboxModal').click(function (e) {
+    if (e.target.id === 'lightboxModal') {
+      $(this).fadeOut();
+    }
+  });
+});
+
+  </script>
+
+
+</body>
+
+</html>
