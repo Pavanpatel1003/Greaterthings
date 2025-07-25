@@ -1749,3 +1749,7 @@ input::placeholder {
 .formsetstyle {
     margin-bottom: 30px;
 }
+
+.mobile-footer-text-special {
+    display: none;
+}
