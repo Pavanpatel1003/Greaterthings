@@ -497,11 +497,3 @@
         display: none;
     }
 }
-
-:root {
-  --vh: 100vh;
-}
-
-.page-wrapper {
-  min-height: var(--vh);
-}
