@@ -172,7 +172,7 @@
     }
 
     .banner_content h6 {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
 
     .craft-title {
@@ -437,9 +437,9 @@
         cursor: pointer;
     }
 
-    .banner_content {
+    /* .banner_content {
         margin-bottom: 7vh;
-    }
+    } */
 
     .custom-box {
         margin: 2px 0px;

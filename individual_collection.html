@@ -478,30 +478,25 @@
       }, 100);
 
       // Arrow controls
-      window.slideRight = function () {
-        const first = slider.children[0];
-        const clone = first.cloneNode(true);
-        slider.appendChild(clone);
-
-        slider.scrollBy({ left: first.offsetWidth, behavior: 'smooth' });
-
-        setTimeout(() => {
-          slider.removeChild(first);
-          slider.scrollLeft -= first.offsetWidth;
-        }, 400);
-      };
+      const scrollStep = 260;
 
       window.slideLeft = function () {
-        const last = slider.children[slider.children.length - 1];
-        const clone = last.cloneNode(true);
-        slider.insertBefore(clone, slider.children[0]);
-        slider.scrollLeft += last.offsetWidth;
-
-        setTimeout(() => {
-          slider.scrollBy({ left: -last.offsetWidth, behavior: 'smooth' });
-          slider.removeChild(last);
-        }, 10);
+        const slider = document.getElementById("customSlider");
+        if (slider.scrollLeft <= 0) {
+          slider.scrollLeft = slider.scrollWidth; // Jump to end
+        }
+        slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
       };
+
+      window.slideRight = function () {
+        const slider = document.getElementById("customSlider");
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        if (slider.scrollLeft >= maxScroll - 10) {
+          slider.scrollLeft = 0; // Jump to start
+        }
+        slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+      };
+
 
 
 
@@ -620,27 +615,27 @@
 
   <script>
     $(document).ready(function () {
-  // Mobile slider ke items pe click handle karenge
-  $('#mobile_imgShow').on('click', '.item', function () {
-    const bg = $(this).css('background-image'); 
-    // background-image: url("someurl")
-    const src = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-    $('#lightboxImage').attr('src', src);
-    $('#lightboxModal').fadeIn();
-  });
+      // Mobile slider ke items pe click handle karenge
+      $('#mobile_imgShow').on('click', '.item', function () {
+        const bg = $(this).css('background-image');
+        // background-image: url("someurl")
+        const src = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+        $('#lightboxImage').attr('src', src);
+        $('#lightboxModal').fadeIn();
+      });
 
-  // Close button pe modal close karna
-  $('.close-lightbox').click(function () {
-    $('#lightboxModal').fadeOut();
-  });
+      // Close button pe modal close karna
+      $('.close-lightbox').click(function () {
+        $('#lightboxModal').fadeOut();
+      });
 
-  // Modal ke bahar click karne pe bhi close karna
-  $('#lightboxModal').click(function (e) {
-    if (e.target.id === 'lightboxModal') {
-      $(this).fadeOut();
-    }
-  });
-});
+      // Modal ke bahar click karne pe bhi close karna
+      $('#lightboxModal').click(function (e) {
+        if (e.target.id === 'lightboxModal') {
+          $(this).fadeOut();
+        }
+      });
+    });
 
   </script>
 
