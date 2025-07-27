@@ -445,6 +445,14 @@
         margin: 2px 0px;
     }
 
+    .special-desktop-code {
+        display: none;
+    }
+
+    .special-mobile-code{
+        display: block;
+    }
+
 }
 
 @media (max-width: 991px) {
