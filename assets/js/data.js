@@ -283,9 +283,10 @@ var collectionData = [
                     './assets/images/Ottothon/OttothonTote2.png',
                     './assets/images/Ottothon/OttothonTote3.png',
                     './assets/images/Ottothon/OttothonTote4.png',
-                    './assets/images/Ottothon/OttothonTote5.png'
-                    // './assets/images/Ottothon/OttothonTote6.png',
-                    // './assets/images/Ottothon/OttothonTote7.png',
+                    './assets/images/Ottothon/OttothonTote5.png',
+                    './assets/images/Ottothon/OttothonTote6.png',
+                    './assets/images/Ottothon/OttothonTote7.png',
+                    './assets/images/Ottothon/OttothonTote8.png',
                 ],
                 "collection_name": "Miracle Collection",
                 "collection_description": "OttoTHON has always been a student-led organization, giving back locally while focusing on our miracle kids. This Grater Things collaboration allowed our kids to be creative and have an outlet to express themselves through fashion. The tote bag inspires others through its message printed on the side while also encouraging its users to paint and customize the blank side of the bag. We also have a fun trucker hat that emphasizes how days and nights come to pass in our minds, but miracles always last.",
