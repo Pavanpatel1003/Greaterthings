@@ -12,15 +12,15 @@
   <script src="./assets/js/fontawesome.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-   <style type="text/css">
-      .swal2-container {
-          position: fixed;
-          top: 20px;
-          left: 20px;
-          width: auto;
-      }
+  <style type="text/css">
+    .swal2-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: auto;
+    }
   </style>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -146,11 +146,12 @@
             <div class="footer-content">
               <!-- Left Icon -->
               <div class="social-icons">
-                <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i
+                    class="fab fa-tiktok"></i></a>
                 <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon"><i
                     class="fa-brands fa-pinterest"></i></a>
-                <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon"><i
-                    class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/graterthingsthreads" target="_blank" class="icon"><i
+                  class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon"><i
                     class="fab fa-instagram"></i></a>
               </div>
@@ -165,11 +166,12 @@
 
               <!-- Right Icon -->
               <div class="social-icons">
-                <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.pinterest.com/graterthingsthreads" target="_blank"  class="icon"><i
+                <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon"><i
+                    class="fab fa-tiktok"></i></a>
+                <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon"><i
                     class="fa-brands fa-pinterest"></i></a>
-                <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon"><i
-                    class="fab fa-facebook-f"></i></a>
+               <a href="https://www.facebook.com/graterthingsthreads" target="_blank" class="icon"><i
+                  class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon"><i
                     class="fab fa-instagram"></i></a>
               </div>
@@ -189,11 +191,11 @@
             </div>
 
             <div class="social-icons mb-30">
-              <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon-mobile-view" aria-label="TikTok"><i
-                  class="fab fa-tiktok"></i></a>
-              <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon-mobile-view" aria-label="PayPal"><i
-                  class="fa-brands fa-pinterest"></i></a>
-              <a href="https://www.facebook.com/aidanrturner/" target="_blank" class="icon-mobile-view"
+              <a href="https://www.tiktok.com/@graterthingsthreads" target="_blank" class="icon-mobile-view"
+                aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.pinterest.com/graterthingsthreads" target="_blank" class="icon-mobile-view"
+                aria-label="PayPal"><i class="fa-brands fa-pinterest"></i></a>
+              <a href="https://www.facebook.com/graterthingsthreads" target="_blank" class="icon-mobile-view"
                 aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
               <a href="https://www.instagram.com/graterthingsthreads/" target="_blank" class="icon-mobile-view"
                 aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -251,97 +253,113 @@
 
   <!--====================== SCRIPTS ======================-->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".contact-form");
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".contact-form");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let isValid = true;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let isValid = true;
 
-      const firstName = document.getElementById("firstname");
-      const lastName = document.getElementById("lastname");
-      const email = document.getElementById("email");
-      const phone = document.getElementById("phone");
-      const message = document.getElementById("message");
+        const firstName = document.getElementById("firstname");
+        const lastName = document.getElementById("lastname");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const message = document.getElementById("message");
 
-      function setError(input, message) {
-        input.classList.add("is-invalid");
-        input.nextElementSibling?.remove();
-        const error = document.createElement("div");
-        error.className = "invalid-feedback";
-        error.innerText = message;
-        input.parentElement.appendChild(error);
-        isValid = false;
-      }
+        function setError(input, message) {
+          input.classList.add("is-invalid");
+          input.nextElementSibling?.remove();
+          const error = document.createElement("div");
+          error.className = "invalid-feedback";
+          error.innerText = message;
+          input.parentElement.appendChild(error);
+          isValid = false;
+        }
 
-      // Clear previous errors
-      document.querySelectorAll(".is-invalid").forEach((el) => {
-        el.classList.remove("is-invalid");
-      });
-      document.querySelectorAll(".invalid-feedback").forEach((el) => el.remove());
+        // Clear previous errors
+        document.querySelectorAll(".is-invalid").forEach((el) => {
+          el.classList.remove("is-invalid");
+        });
+        document.querySelectorAll(".invalid-feedback").forEach((el) => el.remove());
 
-      // Validation
-      if (!/^[A-Za-z\s]+$/.test(firstName.value.trim())) {
-        setError(firstName, "Only letters and spaces are allowed.");
-      }
+        // Validation
+        if (!/^[A-Za-z\s]+$/.test(firstName.value.trim())) {
+          setError(firstName, "Only letters and spaces are allowed.");
+        }
 
-      if (!/^[A-Za-z\s]+$/.test(lastName.value.trim())) {
-        setError(lastName, "Only letters and spaces are allowed.");
-      }
+        if (!/^[A-Za-z\s]+$/.test(lastName.value.trim())) {
+          setError(lastName, "Only letters and spaces are allowed.");
+        }
 
-      if (!/^\S+@\S+\.\S+$/.test(email.value.trim())) {
-        setError(email, "Please enter a valid email address.");
-      }
+        if (!/^\S+@\S+\.\S+$/.test(email.value.trim())) {
+          setError(email, "Please enter a valid email address.");
+        }
 
-      if (phone.value.trim() !== "" && !/^\d{10,15}$/.test(phone.value.trim())) {
-        setError(phone, "Phone number must be 10 to 15 digits.");
-      }
+        if (phone.value.trim() !== "" && !/^\d{10,15}$/.test(phone.value.trim())) {
+          setError(phone, "Phone number must be 10 to 15 digits.");
+        }
 
-      if (message.value.trim().length < 10) {
-        setError(message, "Message must be at least 10 characters long.");
-      }
+        if (message.value.trim().length < 10) {
+          setError(message, "Message must be at least 10 characters long.");
+        }
 
-      // If valid, submit via AJAX
-      if (isValid) {
-        const formData = $(".contact-form").serialize(); // Serialize using jQuery
+        // If valid, submit via AJAX
+        if (isValid) {
+          const formData = $(".contact-form").serialize(); // Serialize using jQuery
 
-        $.ajax({
-          url: 'store-data.php',
-          type: 'POST',
-          data: formData,
-          success: function (response) {
-            // If response is JSON, parse it
-            try {
-              response = typeof response === 'object' ? response : JSON.parse(response);
-            } catch (e) {
-              response = { success: false, message: "Invalid server response." };
-            }
+          $.ajax({
+            url: 'store-data.php',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+              // If response is JSON, parse it
+              try {
+                response = typeof response === 'object' ? response : JSON.parse(response);
+              } catch (e) {
+                response = { success: false, message: "Invalid server response." };
+              }
 
-            if (response.success == true) {
-              $('.contact-form')[0].reset();
+              if (response.success == true) {
+                $('.contact-form')[0].reset();
 
-              Swal.fire({
-                icon: 'success',
-                text: response.message,
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 7000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.addEventListener('mouseenter', Swal.stopTimer);
-                  toast.addEventListener('mouseleave', Swal.resumeTimer);
-                }
-              });
+                Swal.fire({
+                  icon: 'success',
+                  text: response.message,
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 7000,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                  }
+                });
 
-              setTimeout(function () {
-                location.reload();
-              }, 1000);
+                setTimeout(function () {
+                  location.reload();
+                }, 1000);
 
-            } else {
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  text: response.message,
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 7000,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                  }
+                });
+              }
+            },
+            error: function () {
               Swal.fire({
                 icon: 'error',
-                text: response.message,
+                text: "An error occurred during form submission.",
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
@@ -353,54 +371,38 @@
                 }
               });
             }
-          },
-          error: function () {
-            Swal.fire({
-              icon: 'error',
-              text: "An error occurred during form submission.",
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 7000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer);
-                toast.addEventListener('mouseleave', Swal.resumeTimer);
-              }
-            });
-          }
-        });
-      }
-    });
-
-    // Live error removal
-    const fields = [firstName, lastName, email, phone, message];
-    fields.forEach((input) => {
-      input.addEventListener("input", () => {
-        if (input.classList.contains("is-invalid")) {
-          const value = input.value.trim();
-          let valid = true;
-
-          if (input === firstName || input === lastName) {
-            valid = /^[A-Za-z\s]+$/.test(value);
-          } else if (input === email) {
-            valid = /^\S+@\S+\.\S+$/.test(value);
-          } else if (input === phone && value !== "") {
-            valid = /^\d{10,15}$/.test(value);
-          } else if (input === message) {
-            valid = value.length >= 10;
-          }
-
-          if (valid) {
-            input.classList.remove("is-invalid");
-            const error = input.parentElement.querySelector(".invalid-feedback");
-            if (error) error.remove();
-          }
+          });
         }
       });
+
+      // Live error removal
+      const fields = [firstName, lastName, email, phone, message];
+      fields.forEach((input) => {
+        input.addEventListener("input", () => {
+          if (input.classList.contains("is-invalid")) {
+            const value = input.value.trim();
+            let valid = true;
+
+            if (input === firstName || input === lastName) {
+              valid = /^[A-Za-z\s]+$/.test(value);
+            } else if (input === email) {
+              valid = /^\S+@\S+\.\S+$/.test(value);
+            } else if (input === phone && value !== "") {
+              valid = /^\d{10,15}$/.test(value);
+            } else if (input === message) {
+              valid = value.length >= 10;
+            }
+
+            if (valid) {
+              input.classList.remove("is-invalid");
+              const error = input.parentElement.querySelector(".invalid-feedback");
+              if (error) error.remove();
+            }
+          }
+        });
+      });
     });
-  });
-</script>
+  </script>
 
 
 
