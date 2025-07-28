@@ -437,7 +437,16 @@
       document.getElementById("collection_name").innerHTML = indivisualCollection.collection_name;
       document.getElementById("collection_desc").innerHTML = indivisualCollection.collection_description;
       document.getElementById("listShow").innerHTML = collection_lists;
-      document.querySelector('.collection-des-learn-btn').href = indivisualCollection.collection_link;
+      // document.querySelector('.collection-des-learn-btn').href = indivisualCollection.collection_link;
+
+      const learnMoreBtn = document.querySelector('.collection-des-learn-btn');
+      if (indivisualCollection.collection_name.trim().toLowerCase() === 'samples') {
+        learnMoreBtn.style.display = 'none';
+      } else {
+        learnMoreBtn.style.display = 'inline-block';
+        learnMoreBtn.href = indivisualCollection.collection_link;
+      }
+
 
       // ✅ Mobile Image Slider HTML Build
       // Mobile image slider HTML build with looping
@@ -455,16 +464,22 @@
       document.getElementById("mobile_imgShow").innerHTML = mobileSliderHTML;
 
 
-      // Dynamically add initial images
+      // ✅ Images ko bar-bar repeat karne ke liye yeh code lagao
       const images = indivisualCollection.collection_img;
       const slider = document.getElementById("customSlider");
 
-      images.forEach((img) => {
-        const div = document.createElement("div");
-        div.className = "item";
-        div.style.backgroundImage = `url('${img}')`;
-        slider.appendChild(div);
-      });
+      // Kitni baar repeat karna hai (jitni baar loop chahiye)
+      const repeatCount = 50; // Aap isse 20 ya 50 bhi kar sakte ho agar long loop chahiye
+
+      for (let r = 0; r < repeatCount; r++) {
+        images.forEach((img) => {
+          const div = document.createElement("div");
+          div.className = "item";
+          div.style.backgroundImage = `url('${img}')`;
+          slider.appendChild(div);
+        });
+      }
+
 
 
 
@@ -478,24 +493,45 @@
       }, 100);
 
       // Arrow controls
-      const scrollStep = 260;
+      let isScrolling = false; // 👈 Scroll hone ke dauraan dusri baar click se rokne ke liye
 
       window.slideLeft = function () {
+        if (isScrolling) return;
+        isScrolling = true;
+
         const slider = document.getElementById("customSlider");
-        if (slider.scrollLeft <= 0) {
-          slider.scrollLeft = slider.scrollWidth; // Jump to end
-        }
+        const scrollStep = 260;
+
         slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
+
+        setTimeout(() => {
+          if (slider.scrollLeft <= 0) {
+            // 👈 Agar shuru me pahuch gaye to end par jump karo
+            slider.scrollLeft = slider.scrollWidth - (images.length * scrollStep);
+          }
+          isScrolling = false;
+        }, 400);
       };
 
       window.slideRight = function () {
+        if (isScrolling) return;
+        isScrolling = true;
+
         const slider = document.getElementById("customSlider");
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        if (slider.scrollLeft >= maxScroll - 10) {
-          slider.scrollLeft = 0; // Jump to start
-        }
+        const scrollStep = 260;
+
         slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+
+        setTimeout(() => {
+          const maxScroll = slider.scrollWidth - slider.clientWidth;
+          if (slider.scrollLeft >= maxScroll - scrollStep) {
+            // 👈 Agar end par pahuch gaye to shuru me jump karo
+            slider.scrollLeft = scrollStep;
+          }
+          isScrolling = false;
+        }, 400);
       };
+
 
 
 
