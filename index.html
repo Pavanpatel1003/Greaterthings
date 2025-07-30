@@ -80,7 +80,7 @@
 
   .banner_content h6 {
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 60px;
+    margin-top: 100px;
   }
 
   .navbarss {
@@ -309,9 +309,9 @@
                 <div class="banner-set">
                   <div class="banner_content">
                     <h6 class="padded-heading text-center">
-                      YOUR ALL-IN-ONE CUSTOM GARMENT DESIGNERS AND PRODUCERS
+                      YOUR ALL-IN-ONE <br />CUSTOM GARMENT <br />DESIGNERS AND PRODUCERS
                     </h6>
-                    <div class="collection-btn-set mb-30">
+                    <div class="collection-btn-set mb-33">
                       <a href="./contactus.html" class="buttoncommon hide-on-mobile">CRAFT GARMENTS WITH US</a>
                     </div>
                     <div class="collection-btn-set hide-on-mobile">
@@ -963,15 +963,9 @@
       const handleScroll = throttle(() => {
         const scrollY = scrollableDiv.scrollTop;
 
-        if (scrollY > 10) {
-          footer.classList.add("scrolled-footer");
-        } else {
-          footer.classList.remove("scrolled-footer");
-        }
-
         const logo = document.querySelector('#scroll-logo');
         const scrollHandle = document.querySelector('.scroll-handle');
-        const setofimage = document.querySelector('.setofimage');
+        const setofimage = document.querySelector('.setofimage'); // ✅ define yahan karo
         const headerBgSet = document.querySelector('.header-bg-set');
         const stickyOffset = logo.offsetTop;
         const maxScroll = 380;
@@ -981,6 +975,16 @@
         const progress = (scrollYt / maxScroll);
         const newWidth = maxWidth - (progress * (maxWidth - minWidth));
 
+        // ✅ Hide/show setofimage based on scrollY
+        if (scrollY > 10) {
+          footer.classList.add("scrolled-footer");
+          if (setofimage) setofimage.style.display = "none";
+        } else {
+          footer.classList.remove("scrolled-footer");
+          if (setofimage) setofimage.style.display = "block";
+        }
+
+        // logo resizing
         if (scrollY > 230) {
           logo.style.width = '6%';
           logo.style.height = 'auto';
@@ -997,6 +1001,7 @@
           logo.style.transition = 'width 0.1s linear';
         }
 
+        // logo and scrollHandle visibility
         if (scrollY > 550) {
           logo.classList.add('hidden-top-header');
           scrollHandle.classList.add('hidden-top-header');
@@ -1005,6 +1010,7 @@
           scrollHandle.classList.remove('hidden-top-header');
         }
       }, 10);
+
 
       scrollableDiv.addEventListener("scroll", handleScroll);
 
@@ -1284,6 +1290,7 @@
         }
       });
     });
+    
 
   </script>
 
