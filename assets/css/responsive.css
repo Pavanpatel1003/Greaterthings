@@ -583,3 +583,26 @@
         bottom: 95px;
     }
 }
+
+@media (max-width: 522px) {
+    .banner_content {
+        bottom: 75px;
+    }
+}
+
+@media (max-width: 469px) {
+    .banner_content {
+        bottom: 55px;
+    }
+
+    .banner_content h6 {
+        margin-top: 0px !important;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 390px) {
+    .banner_content {
+        bottom: 40px;
+    }
+}

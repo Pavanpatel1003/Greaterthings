@@ -978,9 +978,13 @@
         // ✅ Hide/show setofimage based on scrollY
         if (scrollY > 10) {
           footer.classList.add("scrolled-footer");
-          if (setofimage) setofimage.style.display = "none";
         } else {
           footer.classList.remove("scrolled-footer");
+        }
+
+        if (scrollY > 500) {
+          if (setofimage) setofimage.style.display = "none";
+        } else {
           if (setofimage) setofimage.style.display = "block";
         }
 
@@ -1290,7 +1294,7 @@
         }
       });
     });
-    
+
 
   </script>
 
