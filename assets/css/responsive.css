@@ -56,13 +56,13 @@
     }
 }
 
-@media (max-width: 1170px) {
+/* @media (max-width: 1170px) {
 
     .collection-btn-set,
     .collection-btn-set .hide-on-mobile {
         display: none;
     }
-}
+} */
 
 
 @media (max-width: 991px) {
