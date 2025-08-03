@@ -72,6 +72,10 @@
         font-size: 18px;
     }
 
+    .banner_content {
+        bottom: 150px;
+    }
+
     /* COMMON */
     .content {
         overflow: visible;
@@ -234,6 +238,13 @@
 
 }
 
+@media (max-width: 895px) {
+    .banner_content {
+        bottom: 100px;
+    }
+}
+
+
 @media (max-width: 767px) {
     .funds-sections-hide {
         display: block;
@@ -244,7 +255,7 @@
     }
 
     .banner_content h6 {
-        margin-bottom: 0px;
+        margin-bottom: 50px;
     }
 
     .craft-title {
@@ -578,6 +589,24 @@
     }
 }
 
+@media (max-width: 678px) {
+    .banner_content h6 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 610px) {
+    .banner_content h6 {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 568px) {
+    .banner_content {
+        bottom: 60px !important;
+    }
+}
+
 @media (max-width: 575px) {
     .banner_content {
         bottom: 95px;
@@ -590,7 +619,19 @@
     }
 }
 
-@media (max-width: 469px) {
+@media (max-width: 495px) {
+    .banner_content {
+        bottom: 50px !important;
+    }
+}
+
+@media (max-width: 495px) {
+    .banner_content {
+        bottom: 40px !important;
+    }
+}
+
+@media (max-width: 420px) {
     .banner_content {
         bottom: 55px;
     }
@@ -601,8 +642,8 @@
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 385px) {
     .banner_content {
-        bottom: 40px;
+        bottom: 25px !important;
     }
 }
